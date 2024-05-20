@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:54 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyqo - The Babycare</title>
+
+    <!-- Favicons -->
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.min.css' %}" />
+
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/lightgallery.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/nice-select.min.css' %}" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    <div class="header section">
+
+        <!-- Header Top Start -->
+        <div class="header-top bg-primary">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Header Top Message Start -->
+                    <div class="col-md-12 col-lg-6 text-lg-start text-center">
+                        <div class="header-top-msg-wrapper">
+                            <p class="header-top-message">Welcome to Toyqo baby dresses online store</p>
+                        </div>
+                    </div>
+                    <!-- Header Top Message End -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom">
+            <div class="header-sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-md-6 col-lg-3 col-xl-2 col-6">
+                            <div class="header-logo">
+                                <a href="userhome"><img src="{% static 'assets/images/logo/logo.png' %}" alt="Site Logo" /></a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+
+                        <!-- Header Menu Start -->
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="main-menu">
+                                <ul>
+                                    <li class="has-children">
+                                        <li><a href="userhome">Home</a></li>
+                                        <li><a href="displaycart">Cart</a></li>
+                                        <li><a href="displaywishlist" class="active">Wishlist</a></li>
+                                        <li><a href="user_recent_orders">My orders</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Menu End -->
+
+                        <!-- Header Action Start -->
+
+                        <!-- Header Action End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Bottom End -->
+
+{% if messages %}
+        <div class="alert alert-success alert-dismissible">
+            {% for message in messages %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>{{message}}</strong>
+            {% endfor %}
+</div>
+        {% endif %}
+   
+
+    <!-- Breadcrumb Section Start -->
+    <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-primary">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li>
+                            <a href="userhome"><i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="active"> Wishlist Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+
+    </div>
+    <!-- Breadcrumb Section End -->
+
+</div>
+
+
+	{% if key %}
+	<div class="container mt-3" style="display:block;">
+		{% for i in key %}
+		<div class="card" style="display:inline-block;padding:25px;">
+			<img class="card-img-top" src="{{i.product_details.product_image.url}}" style="width:200px;height:200px;">
+			<div class="card-body">
+				<h5 class="card-title">{{i.product_details.product_name}}</h5>
+				<h5 class="card-title">₹{{i.product_details.product_price}}</h5>
+                <a href="removefromwishlist/{{i.pk}}" class="btn btn-primary" onclick="return confirm('Are you sure you want to remove this item from wishlist.')" rel="noopener">REMOVE FROM WISHLIST</a>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+    {% else %}
+					<center>
+						<h2>NO ITEMS</h2>
+						<p>Please add items to the wishlist</p>
+					</center>
+					{% endif %}
+
+
+
+
+    <!-- Footer Section Start -->
+    <footer class="section footer-section">
+        <!-- Footer Top Start -->
+        <div class="footer-top bg-primary section-padding">
+            <div class="container">
+                <div class="row mb-n8">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h1 class="widget-title">About Us</h1>
+                            <p class="desc-content">We are a team of designers and developers that create high quality wordpress, shopify, Opencart</p>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Contact Us</h2>
+                            <ul class="contact-links">
+                                <li><i class="pe-7s-home"></i> <span>Building No:121, Kadavanthara, Kochi, Kerala, India   Pin:654321</span> </li>
+                                <li><i class="pe-7s-mail"></i><a href="mailto:babycare788@gmail.com"> babycare788@gmail.com</a></li>
+                                <li><i class="pe-7s-call"></i><a href="tel:+91 9495 211 706"> +91 9495 211 706</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget aos-init aos-animate">
+                            <h2 class="widget-title">Information</h2>
+                            <ul class="widget-list">
+                                <li><a href="contact">Terms & Conditions</a></li>
+                                <li><a href="contact">Payment Method</a></li>
+                                <li><a href="contact">Product Warranty</a></li>
+                                <li><a href="contact">Return Process</a></li>
+                                <li><a href="contact">Payment Security</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Signup for newsletter</h2>
+                            <div class="widget-body">
+                                <!-- Newsletter Form Start -->
+                                <div class="newsletter-form-wrap pt-1">
+                                    <form id="mc-form" class="mc-form">
+                                        <input type="email" id="mc-email" class="form-control email-box mb-4" placeholder="demo@example.com" name="EMAIL">
+                                        <button id="mc-submit" class="newsletter-btn" type="submit">Subscribe</button>
+                                    </form>
+                                    <!-- mailchimp-alerts Start -->
+                                    <div class="mailchimp-alerts text-centre">
+                                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                        <div class="mailchimp-success text-success"></div><!-- mailchimp-success end -->
+                                        <div class="mailchimp-error text-danger"></div><!-- mailchimp-error end -->
+                                    </div>
+                                    <!-- mailchimp-alerts end -->
+                                </div>
+                                <!-- Newsletter Form End -->
+                                <p class="desc-content mb-0">Join over 1,000 people who get free and fresh content delivered automatically each time we publish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Top End -->
+
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom bg-secondary pt-4 pb-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="copyright-content">
+                            <p class="mb-0">© 2024 <strong>Toyqo </strong> Made with <i class="fa fa-heart text-danger"></i> by Ayshath salbana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Scripts -->
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- Vendor JS -->
+
+
+    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+
+
+    <!-- Plugins JS -->
+
+
+    <script src="{% static 'assets/js/plugins/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/lightgallery-all.min.js' %}"></script>
+
+    <!--Main JS-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:55 GMT -->
+</html>

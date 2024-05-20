@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:56 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyqo - Kids Store Bootstrap 5 Template</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.min.css' %}" />
+
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/lightgallery.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/nice-select.min.css' %}" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    <div class="header section">
+
+        <!-- Header Top Start -->
+        <div class="header-top bg-primary">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Header Top Message Start -->
+                    <div class="col-md-12 col-lg-6 text-lg-start text-center">
+                        <div class="header-top-msg-wrapper">
+                            <p class="header-top-message">Welcome to Toyqo baby dresses online store</p>
+                        </div>
+                    </div>
+                    <!-- Header Top Message End -->
+                </div>
+            </div>
+        </div>
+        <!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom">
+            <div class="header-sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-md-6 col-lg-3 col-xl-2 col-6">
+                            <div class="header-logo">
+                                <a href="index"><img src="{% static 'assets/images/logo/logo.png' %}" alt="Site Logo" /></a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+
+                        <!-- Header Menu Start -->
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="main-menu">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="login">Login</a></li>
+                                    <li><a href="about">About</a></li>
+                                    <li><a href="contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Menu End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+    <!-- Breadcrumb Section Start -->
+    <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-primary">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li>
+                            <a href="index"><i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="active"> Register Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Register Section Start -->
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 m-auto">
+                    <!-- Register Wrapper Start -->
+                    <div class="register-wrapper">
+
+                        <!-- Login Title & Content Start -->
+                        <div class="section-content text-center mb-5">
+                            <h2 class="title mb-2">Create Account</h2>
+                            <p class="desc-content">Please Register using account details bellow.</p>
+                        </div>
+                        <!-- Login Title & Content End -->
+{% if messages %}
+        <div class="alert alert-success alert-dismissible">
+            {% for message in messages %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>{{message}}</strong>
+            {% endfor %}
+</div>
+        {% endif %}
+
+                        <!-- Form Action Start -->
+                        <form action="" method="post">
+               {% csrf_token %}
+                            <div class="single-input-item mb-3">
+              <input
+                type="text"
+                name="n1"
+                required
+                class="input"
+                id="username"
+                placeholder="User Name "
+              />
+                        </div>
+
+
+                            <div class="single-input-item mb-3">
+            <i class="ri-user-3-line login__icon"></i>
+
+        <div class="box-input">
+              <input
+                type="email"
+                name="n2"
+                required
+                class="input"
+                id="email"
+                placeholder="Email "
+              />
+
+            </div>
+          </div>
+
+                            <div class="single-input-item mb-3">
+
+              <input
+                type="tel"
+                name="n3"
+                required
+                class="input"
+                id="phoneno"
+                placeholder="Phone No"
+                pattern="[0-9]{10,10}"
+                title="A valid phone number contains 10 digits"
+              />
+
+            </div>
+
+                            <div class="single-input-item mb-3">
+
+              <input
+                type="password"
+                name="n4"
+                required
+                class="input"
+                id="password"
+                placeholder="Enter your Password"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              />
+
+             <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                            </div>
+
+
+                            <div class="single-input-item mb-3">
+                                <i class="ri-lock-2-line login__icon"></i>
+            <div class="box-input">
+              <input
+                type="password"
+                name="n5"
+                required
+                class="input"
+                id="c_password"
+                placeholder="Confirm Password"
+              />
+
+
+            </div>
+          </div>
+
+
+                            <!-- Register Button Start -->
+                            <div class="single-input-item mb-3">
+                                <button class="btn btn btn-dark btn-hover-primary rounded-0">Register</button>
+              <p class="login">Already have an account?   <a href="login">Login</a></p>
+
+                            </div>
+                            <!-- Register Button End -->
+
+                        </form>
+                        <!-- Form Action End -->
+
+                    </div>
+                    <!-- Register Wrapper End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Section End -->
+
+
+    <!-- Footer Section Start -->
+    <footer class="section footer-section">
+        <!-- Footer Top Start -->
+        <div class="footer-top bg-primary section-padding">
+            <div class="container">
+                <div class="row mb-n8">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h1 class="widget-title">About Us</h1>
+                            <p class="desc-content">Welcome to our online baby dress shop! At Toyqo, we're dedicated to bringing you the cutest and comfiest outfits for your little ones.Explore our collection today and dress your bundle of joy in style!</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Contact Us</h2>
+                            <ul class="contact-links">
+                                <li><i class="pe-7s-home"></i> <span>Building No:121, Kadavanthara, Kochi, Kerala, India   Pin:654321</span> </li>
+                                <li><i class="pe-7s-mail"></i><a href="mailto:babycare788@gmail.com">babycare788@gmail.com</a></li>
+                                <li><i class="pe-7s-call"></i><a href="tel:+91 9495 211 706"> +91 9495 211 706</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget aos-init aos-animate">
+                            <h2 class="widget-title">Information</h2>
+                            <ul class="widget-list">
+                                <li><a href="empty_contact">Terms & Conditions</a></li>
+                                <li><a href="empty_contact">Payment Method</a></li>
+                                <li><a href="empty_contact">Product Warranty</a></li>
+                                <li><a href="empty_contact">Return Process</a></li>
+                                <li><a href="empty_contact">Payment Security</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Signup for newsletter</h2>
+                            <div class="widget-body">
+                                <!-- Newsletter Form Start -->
+                                <div class="newsletter-form-wrap pt-1">
+                                    <form id="mc-form" class="mc-form">
+                                        <input type="email" id="mc-email" class="form-control email-box mb-4" placeholder="demo@example.com" name="EMAIL">
+                                        <button id="mc-submit" class="newsletter-btn" type="submit">Subscribe</button>
+                                    </form>
+                                    <!-- mailchimp-alerts Start -->
+                                    <div class="mailchimp-alerts text-centre">
+                                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                        <div class="mailchimp-success text-success"></div><!-- mailchimp-success end -->
+                                        <div class="mailchimp-error text-danger"></div><!-- mailchimp-error end -->
+                                    </div>
+                                    <!-- mailchimp-alerts end -->
+                                </div>
+                                <!-- Newsletter Form End -->
+                                <p class="desc-content mb-0">Join over 1,000 people who get free and fresh content delivered automatically each time we publish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top End -->
+
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom bg-secondary pt-4 pb-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="copyright-content">
+                            <p class="mb-0">© 2024 <strong>Toyqo </strong> Made with <i class="fa fa-heart text-danger"></i> by Ayshath salbana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Scripts -->
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- Vendor JS -->
+
+
+    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+
+
+    <!-- Plugins JS -->
+
+
+    <script src="{% static 'assets/js/plugins/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/lightgallery-all.min.js' %}"></script>
+
+    <!--Main JS-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:56 GMT -->
+</html>

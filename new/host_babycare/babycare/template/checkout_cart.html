@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+   <!-- Basic -->
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:56 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyqo - Babycare</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.min.css' %}" />
+
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/lightgallery.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/nice-select.min.css' %}" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+<body>
+<!--<style>-->
+<!--   .card-container {-->
+<!--    display: grid;-->
+<!--    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));-->
+<!--    gap: 20px;-->
+<!--}-->
+
+<!--.card {-->
+<!--    display: flex;-->
+<!--    flex-direction: column;-->
+<!--    border: 1px solid #ccc;-->
+<!--    border-radius: 5px;-->
+<!--    overflow: hidden;-->
+<!--}-->
+
+<!--.card-img-top {-->
+<!--    width: 100%;-->
+<!--    height: auto;-->
+<!--}-->
+
+<!--.card-body {-->
+<!--    padding: 20px;-->
+<!--}-->
+
+<!--.card-title {-->
+<!--    margin-bottom: 5px;-->
+<!--}-->
+
+<!--.card-body p {-->
+<!--    margin-bottom: 15px;-->
+<!--}-->
+
+<!--.card-body form {-->
+<!--    margin-bottom: 10px;-->
+<!--}-->
+
+<!--.btn {-->
+<!--    margin-top: 10px;-->
+<!--    margin-left: 10px;-->
+<!--    float: left;-->
+<!--}-->
+
+
+<!--.s_container {-->
+<!--            max-width: 1200px;-->
+<!--            margin: 50px auto;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--        }-->
+<!--        .item_details {-->
+<!--            width: 40%;-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        .item_details p {-->
+<!--            margin: 5px 0;-->
+<!--    font-size: 16px;-->
+<!--    color: #333;-->
+<!--        }-->
+<!--        .item_details img {-->
+<!--            max-width: 20%;-->
+<!--            height: auto;-->
+<!--            margin-bottom: 10px;-->
+<!--            border-radius: 5px;-->
+<!--        }-->
+<!--        .total {-->
+<!--    margin-top: 20px;-->
+<!--    padding-top: 10px;-->
+<!--    border-top: 1px solid #ccc;-->
+<!--}-->
+
+<!--.total p {-->
+<!--    margin: 5px 0;-->
+<!--    font-size: 16px;-->
+<!--    color: #333;-->
+<!--}-->
+
+<!--        .ship_container {-->
+<!--            width: 55%;-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--            color: #2b2b2c;-->
+<!--        }-->
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 5px;-->
+<!--            font-weight: bold;-->
+<!--            color: #555;-->
+<!--        }-->
+<!--        input[type="text"],-->
+<!--        input[type="email"],-->
+<!--        textarea {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 15px;-->
+<!--            border: 1px solid #ced4da;-->
+<!--            border-radius: 5px;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+<!--        button[type="submit"] {-->
+<!--            background-color: #87eea1;-->
+<!--            color: #242424;-->
+<!--            border: none;-->
+<!--            padding: 12px 20px;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--            font-size: 16px;-->
+<!--            transition: background-color 0.3s ease;-->
+<!--        }-->
+<!--        button[type="submit"]:hover {-->
+<!--            background-color: #2cc345;-->
+<!--        }-->
+<!--        .btn-increase,-->
+<!--.btn-decrease {-->
+<!--    display: inline-block;-->
+<!--    background-color: #ebe7e7;-->
+<!--    color: #000000;-->
+<!--    border: none;-->
+<!--    padding: 3px 6px;-->
+<!--    cursor: pointer;-->
+<!--    border-radius: 5px;-->
+<!--}-->
+
+<!--.btn-increase:hover,-->
+<!--.btn-decrease:hover {-->
+<!--    background-color: #acaeaf;-->
+<!--}-->
+
+<!--.quantity {-->
+<!--    margin-right: 10px;-->
+<!--}-->
+
+<!--</style>-->
+<!--</head>-->
+<!--   <body id="home_page" class="home_page">-->
+      <!-- loader -->
+      <!-- end loader -->
+      <!-- header -->
+      <!-- end header -->
+      <!-- slider -->
+
+  <!-- Header Section Start -->
+    <div class="header section">
+
+        <!-- Header Top Start -->
+        <div class="header-top bg-primary">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Header Top Message Start -->
+                    <div class="col-md-12 col-lg-6 text-lg-start text-center">
+                        <div class="header-top-msg-wrapper">
+                            <p class="header-top-message">Welcome to Toyqo baby dresses online store</p>
+                        </div>
+                    </div>
+
+                    <!-- Header Top Message End -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom">
+            <div class="header-sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-md-6 col-lg-3 col-xl-2 col-6">
+                            <div class="header-logo">
+                                <a href="userhome"><img src="{% static 'assets/images/logo/logo.png' %}" alt="Site Logo" /></a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+
+                        <!-- Header Menu Start -->
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="main-menu">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Menu End -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+
+  <!-- Breadcrumb Section Start -->
+    <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-primary">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li>
+                            <a href="userhome"><i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="active">Cart Payment Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+
+    </div>
+    <!-- Breadcrumb Section End -->
+
+
+
+
+
+<div class="section section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 m-auto">
+                    <!-- Register Wrapper Start -->
+                    <div class="register-wrapper">
+
+                        <!-- Login Title & Content Start -->
+                        <div class="section-content text-center mb-5">
+                            <h2 class="title mb-2">Shipping Address</h2>
+                            <p class="desc-content">Please fill delivery details bellow.</p>
+                        </div>
+							<form action="" method="POST">
+								{% csrf_token %}
+							<div class="single-input-item mb-3">
+                                <input type="text" class="email-bt" id="shipping_name" placeholder="Full name" value="{{user.username}}" name="name" readonly>
+                            </div>
+
+							<div class="single-input-item mb-3">
+                                <input type="text" class="email-bt" id="shipping_phone" placeholder="Phone Number" value="{{user.phone}}" name="phone" readonly>
+                            </div>
+
+							<div class="single-input-item mb-3">
+                                <input type="text" class="email-bt" id="shipping_address" placeholder="Address" required name="address">
+                            </div>
+
+							<div class="single-input-item mb-3">
+                                <input type="text" class="email-bt" id="shipping_city" placeholder="City" required name="city">
+                            </div>
+
+							<div class="single-input-item mb-3">
+                                <input type="number" class="email-bt" id="shipping_pincode" placeholder="Pincode" required name="pincode">
+                            </div>
+
+							<div class="single-input-item mb-3">
+                                <select class="email-bt" required name="state">
+                                    <option value="" disabled selected>Select State</option>
+                                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                        <option value="Kollam">Kollam</option>
+                                        <option value="Pathanamthitta">Pathanamthitta</option>
+                                        <option value="Alappuzha">Alappuzha</option>
+                                        <option value="Kottayam">Kottayam</option>
+                                        <option value="Idukki">Idukki</option>
+                                        <option value="Ernakulam">Ernakulam</option>
+                                        <option value="Thrissur">Thrissur</option>
+                                        <option value="Palakkad">Palakkad</option>
+                                        <option value="Malappuram">Malappuram</option>
+                                        <option value="Kozhikode">Kozhikode</option>
+                                        <option value="Wayanad">Wayanad</option>
+                                        <option value="Kannur">Kannur</option>
+                                        <option value="Kasaragod">Kasaragod</option>
+                                </select>
+                            </div>
+
+								<div class="shipping col-md-6">
+                                    <br>
+						<div class="section-title text-center">
+							<h3 class="title" align="center">Payment</h3>
+						</div>
+						<div class="form-group">
+							<div style="float:left">
+								<div><strong class="text-dark">PRODUCT</strong></div>
+							</div >
+							<div style="float:right">
+								<div><strong class="text-dark">PRICE</strong></div>
+							</div>
+
+						</div>
+<br>
+							{% for i in data %}
+							<div class="form-group">
+								<div style="float:left;">
+									<div>
+										<p  class="col-md-9" style="border:hidden;position:absolute;text-align:left;" >{{i.product_details.product_name}}</p></div>
+								</div>
+								<div >
+									<div>
+										<p style="border:hidden;text-align:right;">₹{{i.product_details.product_price}}</p></div>
+								</div>
+									<div>
+									      <img class="card-img-top" src="{{i.product_details.product_image.url}}" style="width:200px;height:200px;">
+								</div>
+							</div>
+						<br>
+								{% endfor %}
+
+						<div class="form-group">
+<!--								<div style="float:left;" >-->
+<!--									<div><strong class="text-dark">QUANTITY:</strong></div>-->
+<!--								</div>-->
+<!--								<div style="float:right;">-->
+<!--									<div style="padding-left:250px;"><strong class="order-total">-->
+<!--										<p style="border:hidden;width:150px;text-align:right;">{{qty}}</p></strong></div>-->
+<!--								</div>-->
+<!--							</div>-->
+						<br>
+							<div class="form-group">
+								<div style="float:left;" >
+									<div><strong class="text-dark">TOTAL:</strong></div>
+								</div>
+								<div style="float:right;">
+									<div style="padding-left:250px;"><strong class="order-total"><input style="border:hidden;width:150px;text-align:right;" value="{{total}}" name="user_total" type="text" readonly></strong></div>
+								</div>
+							</div>
+									<button type="submit"  class="btn btn-primary col-md-12">Place order</button></div>
+						</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+
+
+  <!-- Footer Section Start -->
+    <footer class="section footer-section">
+        <!-- Footer Top Start -->
+        <div class="footer-top bg-primary section-padding">
+            <div class="container">
+                <div class="row mb-n8">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h1 class="widget-title">About Us</h1>
+                            <p class="desc-content">Welcome to our online baby dress shop! At Toyqo, we're dedicated to bringing you the cutest and comfiest outfits for your little ones.Explore our collection today and dress your bundle of joy in style!</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Contact Us</h2>
+                            <ul class="contact-links">
+                                <li><i class="pe-7s-home"></i> <span>Building No:121, Kadavanthara, Kochi, Kerala, India   Pin:654321</span> </li>
+                                <li><i class="pe-7s-mail"></i><a href="mailto:info@example.com"> info@example.com</a></li>
+                                <li><i class="pe-7s-call"></i><a href="tel:+012-3456-789"> +012 3456 789</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget aos-init aos-animate">
+                            <h2 class="widget-title">Information</h2>
+                            <ul class="widget-list">
+                                <li><a href="contact.html">Terms & Conditions</a></li>
+                                <li><a href="contact.html">Payment Method</a></li>
+                                <li><a href="contact.html">Product Warranty</a></li>
+                                <li><a href="contact.html">Return Process</a></li>
+                                <li><a href="contact.html">Payment Security</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-8">
+                        <div class="single-footer-widget">
+                            <h2 class="widget-title">Signup for newsletter</h2>
+                            <div class="widget-body">
+                                <!-- Newsletter Form Start -->
+                                <div class="newsletter-form-wrap pt-1">
+                                    <form id="mc-form" class="mc-form">
+                                        <input type="email" id="mc-email" class="form-control email-box mb-4" placeholder="demo@example.com" name="EMAIL">
+                                        <button id="mc-submit" class="newsletter-btn" type="submit">Subscribe</button>
+                                    </form>
+                                    <!-- mailchimp-alerts Start -->
+                                    <div class="mailchimp-alerts text-centre">
+                                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                        <div class="mailchimp-success text-success"></div><!-- mailchimp-success end -->
+                                        <div class="mailchimp-error text-danger"></div><!-- mailchimp-error end -->
+                                    </div>
+                                    <!-- mailchimp-alerts end -->
+                                </div>
+                                <!-- Newsletter Form End -->
+                                <p class="desc-content mb-0">Join over 1,000 people who get free and fresh content delivered automatically each time we publish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top End -->
+
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom bg-secondary pt-4 pb-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="copyright-content">
+                            <p class="mb-0">© 2024 <strong>Toyqo </strong> Made with <i class="fa fa-heart text-danger"></i> by Ayshath salbana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Scripts -->
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- Vendor JS -->
+
+
+    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+
+
+    <!-- Plugins JS -->
+
+
+    <script src="{% static 'assets/js/plugins/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/lightgallery-all.min.js' %}"></script>
+
+    <!--Main JS-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+   </body>
+</html>

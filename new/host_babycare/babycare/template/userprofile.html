@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+
+     <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.min.css' %}" />
+
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/lightgallery.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/nice-select.min.css' %}" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+</head>
+<body>
+
+
+  <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-primary">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li>
+                            <a href="userhome"><i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="active"> Userprofile Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+{% if messages %}
+        <div class="alert alert-success alert-dismissible">
+            {% for message in messages %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>{{message}}</strong>
+            {% endfor %}
+</div>
+        {% endif %}
+
+
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-10 m-auto">
+                    <div class="login-wrapper">
+                        <div class="section-content text-center mb-2">
+                            <h2 class="title mb-2">Profile</h2>
+                        </div>
+
+        <form id="updateProfileForm" class="contactForm" action="/update_profile" method="POST" enctype="multipart/form-data">
+
+               {% csrf_token %}
+
+               <div class="single-input-item mb-0">
+                                <input type="text" placeholder="Username" name="username" value="{{data.username}}" readonly>
+                            </div>
+                     <p class="text-danger">You Cannot Change Your Registered Username</p>
+
+            <div class="single-input-item mb-3">
+            <i class="ri-user-3-line login__icon"></i>
+            <input type="text" placeholder="Email" name="email" id="email" value="{{data.email}}">
+            </div>
+
+            <div class="single-input-item mb-3">
+                <input type="text" placeholder="Phone Number" name="phone" pattern="[0-9]{10,10}" title="A valid phone number contains 10 digits" maxlength="10" value="{{data.number}}">
+            </div>
+
+            <button type="submit" class="btn btn btn-dark btn-hover-primary rounded-0">Update Profile</button>
+        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="section section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-10 m-auto">
+                    <div class="login-wrapper">
+                        <div class="section-content text-center mb-5">
+                            <h2 class="title mb-2">Change Password</h2>
+                        </div>
+
+        <form id="changePasswordForm" class="contactForm" action="/change_password" method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+
+               <div class="single-input-item mb-3">
+                                <input type="password" placeholder="Current Password" name="current_password" id="current_password">
+                            </div>
+
+            <div class="single-input-item mb-3">
+                <input type="password" placeholder="New Password" name="new_password" id="new_password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            </div>
+
+            <div class="single-input-item mb-3">
+                 <input type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            </div>
+            <button type="submit" class="btn btn btn-dark btn-hover-primary rounded-0">Change Password</button>
+             </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+
+
+    <!-- Plugins JS -->
+
+
+    <script src="{% static 'assets/js/plugins/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/lightgallery-all.min.js' %}"></script>
+
+    <!--Main JS-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/index by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:09 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyqo - The Babycare</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.min.css' %}" />
+
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/lightgallery.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/nice-select.min.css' %}" />
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    <div class="header section">
+
+        <!-- Header Top Start -->
+        <div class="header-top bg-primary">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Header Top Message Start -->
+                    <div class="col-12">
+                        <div class="header-top-msg-wrapper text-center">
+                            <p class="header-top-message text-center">Hello admin...</p>
+                            <div class="header-top-close-btn">
+                                <button class="top-close-btn"><i class="pe-7s-close"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header Top Message End -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom">
+            <div class="header-sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-md-6 col-lg-3 col-xl-2 col-6">
+                            <div class="header-logo">
+                                <a href="adminhome"><img src="{% static 'assets/images/logo/logo.png' %}" alt="Site Logo" /></a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+
+                        <!-- Header Menu Start -->
+                        <div class="col-lg-8 d-none d-lg-block">
+
+                            <div class="main-menu">
+                                <ul>
+                                    <li><a href="adminhome">Home</a></li>
+                                    <li><a href="viewuser">View user</a></li>
+                                    <li><a href="#" class="active">Add Product</a></li>
+                                    <li><a href="displayproduct">Display Product</a></li>
+                                    <li><a href="admin_order_details">Order Details</a></li>
+                                    <li><a href="lowstock">Low Stock</a></li>
+                                    <li><a href="login">Log Out</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-primary">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li>
+                            <a href="adminhome"><i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="active"> Add Product Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+
+    </div>
+    <!-- Breadcrumb Section End -->
+
+      <!-- Add Product Section Start -->
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 m-auto">
+                    <!-- Register Wrapper Start -->
+                    <div class="register-wrapper">
+
+                        <!-- Login Title & Content Start -->
+                        <div class="section-content text-center mb-5">
+                            <h2 class="title mb-2">Add Product</h2>
+                        </div>
+                        <!-- Add Title & Content End -->
+
+{% if messages %}
+        <div class="alert alert-success alert-dismissible">
+            {% for message in messages %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>{{message}}</strong>
+            {% endfor %}
+</div>
+        {% endif %}
+<div class="col-md-7 padding_0">
+      <div class="mail_section">
+         <div class="email_text">
+
+            <form action="" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+
+
+                            <div class="single-input-item mb-3">
+                                <input type="text" placeholder="Product Name" name="n1" required>
+                            </div>
+
+                            <div class="single-input-item mb-3">
+                                <input type=text placeholder="Product price" name="n2" required>
+                            </div>
+
+                            <div class="single-input-item mb-3">
+                                <input type="text" placeholder="Product Quantity" name="n3" required>
+                            </div>
+
+                            <div class="single-input-item mb-3">
+                                <input type="text" placeholder="Product Category" name="n5" required>
+                            </div>
+
+<!--                            <div class="single-input-item mb-3">-->
+<!--                                <input type="text" placeholder="Product Sub Category" name="n6" required>-->
+<!--                            </div>-->
+
+                            <div class="single-input-item mb-3">
+                                <select class="email-bt" name="n6">
+                                    <option value="" disabled selected>Select Subcategory</option>
+                                        <option value="NB">NB</option>
+                                        <option value="3-6M_boy">3-6M_boy</option>
+                                        <option value="6-9M_boy">6-9M_boy</option>
+                                        <option value="9-12M_boy">9-12M_boy</option>
+                                        <option value="12-18M_boy">12-18M_boy</option>
+                                        <option value="18-24M_boy">18-24M_boy</option>
+                                        <option value="24M-2yr_boy">24M-2yr_boy</option>
+                                        <option value="3-6M_girl">3-6M_girl</option>
+                                        <option value="6-9M_girl">6-9M_girl</option>
+                                        <option value="9-12M_girl">9-12M_girl</option>
+                                        <option value="12-18M_girl">12-18M_girl</option>
+                                        <option value="18-24M_girl">18-24M_girl</option>
+                                </select>
+                            </div>
+
+                            <div class="single-input-item mb-3">
+                                <input type="file" placeholder="upload product image" name="n4" required>
+                            </div>
+
+                            <div class="single-input-item mb-3">
+                                <button class="btn btn btn-dark btn-hover-primary rounded-0">Submit</button>
+                            </div>
+
+                        </form>
+                        <!-- Form Action End -->
+
+                    </div>
+                    <!-- Add Product Wrapper End -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section End -->
+
+
+    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+
+
+    <!-- Plugins JS -->
+
+
+    <script src="{% static 'assets/js/plugins/aos.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/lightgallery-all.min.js' %}"></script>
+
+    <!--Main JS-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
+
+<!-- Mirrored from htmldemo.net/toyqo/toyqo/index by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Apr 2023 10:40:39 GMT -->
